@@ -1,4 +1,114 @@
-*{
-  padding: 0;
-  margin: 0;
+.box {
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  flex-direction: column;
+  align-items: center;
 }
+
+.box-inline {
+  display: inline-flex;
+}
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: " ";
+}
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-position: left top;
+  background-repeat: repeat;
+  z-index: 2;
+  display: block;
+  background-color: #000;
+  opacity: 0;
+}
+
+.overlay.active {
+  -webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -ms-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+.overlay.active {
+  opacity: .6;
+}
+
+
+.micon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a, a>* {
+  color: #e96247;
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-transition: background-color .2s ease,border .2s ease,color .2s ease,opacity .2s ease-in-out;
+  -moz-transition: background-color .2s ease,border .2s ease,color .2s ease,opacity .2s ease-in-out;
+  -ms-transition: background-color .2s ease,border .2s ease,color .2s ease,opacity .2s ease-in-out;
+  -o-transition: background-color .2s ease,border .2s ease,color .2s ease,opacity .2s ease-in-out;
+  transition: background-color .2s ease,border .2s ease,color .2s ease,opacity .2s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.white {
+  color: #fff!important;
+}
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.fade-enter-active {
+  transition: all .8s ease-out;
+}
+.fade-leave-active {
+  transition: all .8s ease-out;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+/*页面过渡效果*/
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.moc-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.moc-fade-enter {
+  opacity: 0;
+  /*transform:translateX(50px);*/
+}
+
+.moc-fade-leave-active {
+  transition: all 0s;
+}
+
+

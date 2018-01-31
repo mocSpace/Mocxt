@@ -11,30 +11,39 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: function(resolve){
-        require(['../views/Test.vue'], resolve);
-      }
+      redirect: '/Home'
     },
     {
-      path: '/LoadingECG',
-      name: 'LoadingECG',
-      component: function(resolve){
-        require(['../components/LoadingECG/LoadingECG.vue'], resolve);
+      path: '/Home',
+      name: 'Home',
+      component: function (resolve) {
+        require(['../views/Home.vue'], resolve);
+      }
+    }, {
+      path: '/About',
+      name: 'About',
+      component: function (resolve) {
+        require(['../views/About.vue'], resolve);
+      }
+    },{
+      path: '/Test',
+      name: 'Test',
+      component: function (resolve) {
+        require(['../views/Test.vue'], resolve);
       }
     }
   ]
 })
 
-const Foo = resolve => {
-  let loadingInstance = Loading.service({
-    text: "加载中",
-    background: "#333"
-  });
-  require.ensure(['../views/Test.vue'], () => {
-    resolve(require('../views/Test.vue'));
-    loadingInstance.close();
-  })
-};
+// const Foo = resolve => {
+//   let loadingInstance = Loading.service({
+//     text: "加载中",
+//     background: "#333"
+//   });
+//   require.ensure(['../views/Test.vue'], () => {
+//     resolve(require('../views/Test.vue'));
+//     loadingInstance.close();
+//   })
+// };
 
 
